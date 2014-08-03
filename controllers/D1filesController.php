@@ -130,8 +130,7 @@ class D1filesController extends Controller {
     }
 
     public function actionEditableSaver() {
-        Yii::import('TbEditableSaver');
-        $es = new TbEditableSaver('D1files'); // classname of model to be updated
+        $es = new EditableSaver('D1files'); // classname of model to be updated
         $es->update();
     }
 
