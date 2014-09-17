@@ -1,6 +1,6 @@
 <?php
 
-class m131226_112800_create_tables_d1files extends CDbMigration
+class m131226_112801_create_tables_d1files extends CDbMigration
 {
 
 	/**
@@ -9,8 +9,10 @@ class m131226_112800_create_tables_d1files extends CDbMigration
 	public function up()
 	{
 
-        $sSql = "DROP TABLE IF EXISTS d1files";
-        $result = Yii::app()->db->createCommand($sSql)->query();
+       $table = Yii::app()->db->schema->getTable('d1files',true);
+        if (!empty($table)) {
+            return;
+        }  
 
         $sSql = "
 
