@@ -12,6 +12,6 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "blueimp/jQuery-File-Upload": "v9.30.0"
+        "blueimp/blueimp-file-upload": "v9.30.0"
     }
 }
