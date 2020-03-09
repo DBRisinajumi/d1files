@@ -55,7 +55,9 @@ class D1files extends BaseD1files {
             $path = Yii::app()->getBasePath() . "/../images/uploads/{$this->id}/";
             //Create the folder and give permissions if it doesnt exists
             if (!is_dir($path)) {
-                mkdir($path);
+                if (!mkdir($path) && !is_dir($path)) {
+                    throw new \RuntimeException(sprintf('Directory "%s" was not created', $path));
+                }
                 chmod($path, 0777);
             }
 
